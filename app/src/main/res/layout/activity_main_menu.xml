@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/lib/com.pwd.passwordgame"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_main_menu"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:background="@drawable/gradient"
+    tools:context="pwgame.passwordgame.MainMenu">
+
+
+    <Button
+        android:text="About"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/info_btn"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="25dp"
+        android:onClick="openAbout"
+        style="@style/Widget.AppCompat.Button.Colored" />
+
+    <Button
+        android:text="Reset local scores"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/rst_btn"
+        android:layout_above="@+id/info_btn"
+        android:layout_alignLeft="@+id/schbld_btn"
+        android:layout_alignStart="@+id/schbld_btn"
+        style="@style/Widget.AppCompat.Button.Colored" />
+
+    <Button
+        android:text="Build your schema"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/schbld_btn"
+        android:layout_above="@+id/info_btn"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="47dp"
+        style="@style/Widget.AppCompat.Button.Colored" />
+
+    <Button
+        android:text="How to play"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/instr_btn"
+        android:layout_above="@+id/schbld_btn"
+        android:layout_centerHorizontal="true"
+        android:onClick="openInstruction"
+        style="@style/Widget.AppCompat.Button.Colored" />
+
+    <Button
+        android:text="Play"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/play_btn"
+        android:layout_centerVertical="true"
+        android:layout_alignLeft="@+id/info_btn"
+        android:layout_alignStart="@+id/info_btn"
+        android:onClick="openIntroduction"
+        style="@style/Widget.AppCompat.Button.Colored" />
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/imageView"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        tools:ignore="MissingPrefix"
+        android:background="@android:color/transparent"
+        android:src="@drawable/logo" />
+
+    <TextView
+        android:text="v1.0.1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_toRightOf="@+id/rst_btn"
+        android:layout_toEndOf="@+id/rst_btn"
+        android:layout_marginLeft="12dp"
+        android:layout_marginStart="12dp"
+        android:id="@+id/textView2"
+        android:textColor="@android:color/white" />
+
+    <Button
+        android:text="Login"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/login_btn"
+        android:layout_alignBaseline="@+id/textView2"
+        android:layout_alignBottom="@+id/textView2"
+        android:layout_toLeftOf="@+id/rst_btn"
+        android:layout_toStartOf="@+id/rst_btn"
+        android:background="@android:color/holo_blue_dark"
+        android:textColor="@android:color/white"
+        android:onClick="openLogin"
+        style="@style/Widget.AppCompat.Button.Colored" />
+
+</RelativeLayout>
