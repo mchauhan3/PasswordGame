@@ -19,10 +19,11 @@ import android.widget.LinearLayout;
 import android.widget.ScrollView;
 import android.widget.TextView;
 
-import com.firebase.client.DataSnapshot;
-import com.firebase.client.Firebase;
-import com.firebase.client.FirebaseError;
-import com.firebase.client.ValueEventListener;
+
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
 import java.util.Iterator;
@@ -67,8 +68,7 @@ public class search extends Activity {
     String query;
     private void doSearch() {
         query = search.getText().toString();
-        Firebase.setAndroidContext(this);
-        Firebase root = new Firebase("https://passwordgame.firebaseio.com/");
+        DatabaseReference root = Splashscreen.getSchemaDatabase();
         root.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
@@ -86,7 +86,7 @@ public class search extends Activity {
                 updateResults();
             }
             @Override
-            public void onCancelled(FirebaseError firebaseError) {
+            public void onCancelled(DatabaseError firebaseError) {
 
             }
         });

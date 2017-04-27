@@ -10,11 +10,36 @@ import android.view.animation.AnimationUtils;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+
 public class Splashscreen extends Activity {
+    private static DatabaseReference mSchemaDatabase;
+    private static FirebaseAuth auth;
+
+    public static DatabaseReference getSchemaDatabase() {
+        return mSchemaDatabase;
+    }
+
+    public static DatabaseReference getUserDatabase() {
+        return mUserDatabase;
+    }
+
+    private static DatabaseReference mUserDatabase;
+
+    public static FirebaseAuth getAuth() {
+        return auth;
+    }
+
+
     public void onAttachedToWindow() {
         super.onAttachedToWindow();
         Window window = getWindow();
         window.setFormat(PixelFormat.RGBA_8888);
+        mSchemaDatabase = FirebaseDatabase.getInstance().getReference("Schemas");
+        mUserDatabase = FirebaseDatabase.getInstance().getReference("Users");
+        auth = FirebaseAuth.getInstance();
     }
     /** Called when the activity is first created. */
     Thread splashTread;

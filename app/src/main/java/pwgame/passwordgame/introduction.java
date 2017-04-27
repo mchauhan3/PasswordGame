@@ -127,11 +127,11 @@ public class introduction extends AppCompatActivity {
         }
         ScrollView sv = new ScrollView(this);
         Button build = new Button(this);
-        build.setText("Schema Builder");
+        build.setText("Play Community Levels");
         build.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(v.getContext(), schemaBuilder.class);
+                Intent intent = new Intent(v.getContext(), CommunityPlay.class);
                 startActivity(intent);
             }
         });
@@ -146,28 +146,6 @@ public class introduction extends AppCompatActivity {
             }
         });
         ll.addView(search);
-        Button reset = new Button(this);
-        reset.setText("Reset Local High Scores");
-        reset.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                SharedPreferences sp = getSharedPreferences("scores", 0);
-                SharedPreferences.Editor ed = sp.edit();
-                for (int x = 0; x < levelCount; x++) {
-                    if (sp.contains("level" + x)) {
-                        ed.remove("level" + x);
-                    }
-                }
-                if (sp.contains("lastLevel")) {
-                    ed.remove("lastLevel");
-                }
-                ed.commit();
-                Intent intent = new Intent(v.getContext(), introduction.class);
-                startActivity(intent);
-                finish();
-            }
-        });
-        ll.addView(reset);
         sv.addView(ll);
         setContentView(sv);
         //setContentView(R.gradient.activity_introduction);

@@ -32,6 +32,7 @@
         android:layout_above="@+id/info_btn"
         android:layout_alignLeft="@+id/schbld_btn"
         android:layout_alignStart="@+id/schbld_btn"
+        android:onClick="resetScore"
         style="@style/Widget.AppCompat.Button.Colored" />
 
     <Button
@@ -42,6 +43,7 @@
         android:layout_above="@+id/info_btn"
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="47dp"
+        android:onClick="openSchemaBuilder"
         style="@style/Widget.AppCompat.Button.Colored" />
 
     <Button

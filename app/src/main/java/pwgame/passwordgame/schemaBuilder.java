@@ -17,10 +17,12 @@ import android.widget.RelativeLayout;
 import android.widget.Spinner;
 import android.widget.TextView;
 
-import com.firebase.client.Firebase;
+
+import com.google.firebase.database.DatabaseReference;
 
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.Random;
 
 public class schemaBuilder extends AppCompatActivity {
 
@@ -66,13 +68,12 @@ public class schemaBuilder extends AppCompatActivity {
         toSchema.setText("Edit Rules");
         ll.addView(toMap);
         ll.addView(toSchema);
-        Firebase.setAndroidContext(this);
         Button saveToDB = new Button(this);
         saveToDB.setText("Save to Database");
         saveToDB.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Firebase ref = new Firebase("https://passwordgame.firebaseio.com");
+                DatabaseReference ref = Splashscreen.getSchemaDatabase();
                 if (getIntent().getExtras() != null && getIntent().getExtras().containsKey("start") && getIntent().getExtras().containsKey("instr")) {
                     ArrayList<Integer> start = getIntent().getIntegerArrayListExtra("start");
                     ArrayList<Integer> end = getIntent().getIntegerArrayListExtra("end");
@@ -90,8 +91,10 @@ public class schemaBuilder extends AppCompatActivity {
                     }
                     a2 += instr.get(instr.size()-1);
                     DBPasswordData dbpwd = new DBPasswordData(ed.getText().toString(), a1, a2);
-                    Firebase temp = ref.push();
-                    temp.setValue(dbpwd);
+                    String uid = Splashscreen.getAuth().getCurrentUser().getUid();
+                    Random rand = new Random();
+                    uid += rand.nextInt(1000000000);
+                    ref.child(uid).setValue(dbpwd);
                     finish();
                 }
 

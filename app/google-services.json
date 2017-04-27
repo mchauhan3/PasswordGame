@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "277491745027",
+    "firebase_url": "https://passwordgame-1b95e.firebaseio.com",
+    "project_id": "passwordgame-1b95e",
+    "storage_bucket": "passwordgame-1b95e.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:277491745027:android:fe20a89cb54504b9",
+        "android_client_info": {
+          "package_name": "pwgame.passwordgame"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "277491745027-shlpe3qb0j7ghrrb08fing0mksnabtud.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "pwgame.passwordgame",
+            "certificate_hash": "65dc7964f37438084e31cd41a5e78e19fb43f083"
+          }
+        },
+        {
+          "client_id": "277491745027-j089v63aom1khbu14l84mc3hi1psq60k.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBdg_9wcYMJ9KeXQvM3NguCSs-j5Bsew0k"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "277491745027-j089v63aom1khbu14l84mc3hi1psq60k.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

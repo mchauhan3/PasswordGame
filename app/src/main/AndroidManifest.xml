@@ -66,7 +66,9 @@
         <activity android:name=".AboutPage" />
         <activity
             android:name=".LoginActivity"
-            android:label="@string/title_activity_login"></activity>
+            android:label="@string/title_activity_login" />
+        <activity android:name=".CreateProfile" />
+        <activity android:name=".CommunityPlay"></activity>
     </application>
 
 </manifest>
